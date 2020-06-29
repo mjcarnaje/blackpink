@@ -1,0 +1,99 @@
+.container {
+    max-width: 120rem;
+    background-color: var(--color-grey-light-1);
+    margin: 8rem auto;
+    box-shadow: var(--shadow-dark);
+
+    @media only screen and (max-width:$bp-largest){ // to get rid the space around the containter
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }    
+
+}
+.header {
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: var(--line);
+    font-size: 1.4rem;
+
+    display: flex;
+    justify-content: space-between; //divides the empty spcae between the three elements;
+    align-items: center; //without flexbox, we use magrin top etc., flexbox makes our lives easier;
+
+    @media only screen and (max-width: 31.25em) { // for the searchbar into the new line
+        flex-wrap: wrap;
+        height: 11rem;
+        align-content: space-around;
+      }
+
+
+
+}
+
+.content {
+    display: flex;
+
+    @media only screen and (max-width:$bp-medium){ // make the content culomn intead of the default (smaller screen)
+        flex-direction: column;
+    }    
+    
+}
+.sidebar {
+    background-color: var(--color-grey-dark-1);
+
+    flex: 0 0 18%; //for side bar since its percent it will shrink
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; // end to end the icon and the copyright;
+}
+.hotel-view {
+    background-color: #fff;
+    flex: 1; //it will grow to the available space;
+
+}
+
+.detail {
+    display: flex;
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line);
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 3rem; //to much space for this resolution
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column; // to make the detail section portrait/column instead of the default because it has smaller resolution
+    }
+    
+}
+
+.description {
+    font-size: 1.4rem;
+    background-color: white;
+    box-shadow: var(--shadow);
+    padding: 3rem;
+    flex: 0 0 60%;
+    margin-right: 4.5rem;
+
+    @media only screen and (max-width: $bp-medium) { //to much space for this resolution
+        padding: 2rem;
+        margin-right: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) { 
+        margin-right: 0; //because its overlapping (the user-reviews)
+        margin-bottom: 3rem; // so that they hav the same space
+    }
+}
+
+.user-reviews { 
+    flex: 1;
+    font-size: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
