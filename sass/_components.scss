@@ -1,4 +1,3 @@
-
 ////////////////////////////////////////////////
 // LOGO
 .logo {
@@ -6,14 +5,11 @@
     margin-left: 2rem;
     border-radius: 3.5px;
 
-    @media only screen and (max-width: 37.5em) { //we make the logo smaller;
-        height: 3rem; 
-      }
-    
+    @media only screen and (max-width: 37.5em) {
+        //we make the logo smaller;
+        height: 3rem;
+    }
 }
-
-
-
 
 ////////////////////////////////////////////////
 // SEARCH BOX
@@ -25,70 +21,75 @@
     align-items: center; //cross axis
     justify-content: center; //main axis
 
-    @media only screen and (max-width: 31.25em) { // the make the search bar into the last order and use wrap so that it will go down to the new line
-         order: 1;
-         flex: 0 0 100%;
-         
+    @media only screen and (max-width: 31.25em) {
+        // the make the search bar into the last order and use wrap so that it will go down to the new line
+        order: 1;
+        flex: 0 0 100%;
     }
 
-    &__input { // SEARCH BAR
+    &__input {
+        // SEARCH BAR
         font-family: inherit; //input element doesn'nt inherit the font of the global element;
         font-size: inherit; //inherit from header font-size
         color: inherit;
         background-color: var(--color-grey-light-2);
         width: 90%;
-        
+
         border: none;
 
-        padding: .7rem 2rem;
+        padding: 0.7rem 2rem;
         border-radius: 100px;
 
         margin-right: -3.5rem; // the button will move on top of the input;
 
-        transition: all .3s;
+        transition: all 0.3s;
 
-
-        &:focus { //when it is clicked;
+        &:focus {
+            //when it is clicked;
             outline: none;
             width: 100%;
             background-color: var(--color-grey-light-3); //it will get darker;
         }
 
-        &::-webkit-input-placeholder { //FONT PLACEHOLDER
+        &::-webkit-input-placeholder {
+            //FONT PLACEHOLDER
             font-weight: 100;
-            color: var(--color-grey-light-4); //before when its clicked; lighter color of font;
+            color: var(
+                --color-grey-light-4
+            ); //before when its clicked; lighter color of font;
         }
     }
 
-            &__input:focus + &__button { // when the input is clicked the background color of the icon it changes to its original color that;s why we use this;
-                background-color: var(--color-grey-light-3); //it will get darker;
-            }
+    &__input:focus + &__button {
+        // when the input is clicked the background color of the icon it changes to its original color that;s why we use this;
+        background-color: var(--color-grey-light-3); //it will get darker;
+    }
 
+    &__button {
+        // THE ICON BUTTON
 
-
-    &__button { // THE ICON BUTTON
-
-        background-color: var(--color-grey-light-2); //so that it will camouflage to the input
+        background-color: var(
+            --color-grey-light-2
+        ); //so that it will camouflage to the input
         border: none;
 
         &:focus {
-            outline: none; }
-        &:active {
-            transform: translateY(2px); //when the search icon clicked, it will bounce a bit
+            outline: none;
         }
-
+        &:active {
+            transform: translateY(
+                2px
+            ); //when the search icon clicked, it will bounce a bit
+        }
     }
 
-    &__icon { // THE ICON ALONE
+    &__icon {
+        // THE ICON ALONE
         height: 2rem;
         width: 2rem;
         fill: var(--color-grey-dark-3);
     }
 }
-
-
-
-
 
 ////////////////////////////////////////////////
 // USER NAVIGATION
@@ -98,7 +99,6 @@
 
     display: flex;
     align-items: center;
-    
 
     & > * {
         padding: 0 2rem; //padding
@@ -112,7 +112,6 @@
         background-color: var(--color-grey-light-2);
     }
 
-
     &__icon-box {
         position: relative;
     }
@@ -120,11 +119,9 @@
         height: 2.25rem;
         width: 2.25rem;
         fill: var(--color-grey-dark-2);
-        
-        
     }
     &__notification {
-        font-size: .8rem;
+        font-size: 0.8rem;
         height: 1.75rem;
         width: 1.75rem;
         border-radius: 50%;
@@ -137,33 +134,28 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        
     }
 
     &__user {
         // we don't need this because we just code it using this  & > *
-
     }
 
     &__user-photo {
         height: 3.75rem;
         border-radius: 50%;
         margin-right: 1rem;
-
     }
 
     &__user-name {
         // we don't need this because we already code it using this  & > *
-
     }
 }
-
 
 ////////////////////////////////////////////////
 // SIDE NAVIGATION
 
-
-.side-nav { //ul
+.side-nav {
+    //ul
     font-size: 1.4rem; //overall font-size of the side navigation
     list-style: none; // get rid of the bullet style
     margin-top: 3.5rem; //overall margin top
@@ -173,11 +165,12 @@
         margin: 0; // to get rid of the margin-top before;
     }
 
-    &__item { //li
+    &__item {
+        //li
         position: relative; // because we use absolute position in item::before
-                
+
         &:not(:last-child) {
-            margin-bottom: .5rem; //there's a space between the li elements
+            margin-bottom: 0.5rem; //there's a space between the li elements
 
             @media only screen and (max-width: 56.25em) {
                 margin: 0; //to get rid of the margin bottom;
@@ -187,24 +180,23 @@
         @media only screen and (max-width: 56.25em) {
             flex: 1; // so it will grow
         }
-
     }
 
     &__item::before {
-        content: "";    // if we use ::before and ::after we basically need this, because without this the whole thing wont work;
-        position: absolute;     // to make it display a line ine the left side;
+        content: ''; // if we use ::before and ::after we basically need this, because without this the whole thing wont work;
+        position: absolute; // to make it display a line ine the left side;
         top: 0;
         left: 0;
         height: 100%; // we make it 100% so it looks like a perfect line and there's no space;
         width: 3px; // line
         background-color: var(--color-primary-dark); // line color;
         transform: scaleY(0); // for animation purposes;
-        transition: transform .2s,
-                    width .4s cubic-bezier(1,0,0,.99) .2s, // delay .4s and nice animation;
-                    background-color .1s; //for active or when we clicked it;
+        transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 0.99) 0.2s,
+            // delay .4s and nice animation;
+                background-color 0.1s; //for active or when we clicked it;
     }
     &__item:hover::before,//active state
-    &__item--active::before   {
+    &__item--active::before {
         transform: scaleY(1); //animation;
         width: 100%; //cover the whole thing in li
     }
@@ -233,25 +225,22 @@
         }
         @media only screen and (max-width: 37.5em) {
             flex-direction: column; // so that the icon and the text is in vertically alligned
-            padding: 1.5rem .5rem; //to much space
+            padding: 1.5rem 0.5rem; //to much space
         }
-        
-
-
     }
-    &__icon { //icon;
+    &__icon {
+        //icon;
         width: 1.75rem;
-        height: 1.75rem; 
-        margin-right: 2rem; 
+        height: 1.75rem;
+        margin-right: 2rem;
         fill: currentColor; //color of the current element or the parent element, very useful because when we code some hover effect in the link it also use that effect through this cude (currentColor);
 
         @media only screen and (max-width: 37.5em) {
             margin-right: 0; // we get rid of the margin-right because it is in a culomn direction right now
-            margin-bottom: .7rem; // and replace it as a margin bottom so that it has a space
+            margin-bottom: 0.7rem; // and replace it as a margin bottom so that it has a space
             width: 1.5rem; // we make the icon smaller as the resolution become smaller
-            height:1.5rem;
+            height: 1.5rem;
         }
-        
     }
 }
 
@@ -289,19 +278,18 @@
     align-items: center; // vertically center
     border-bottom: var(--line);
     //justify-content: space-between; // we connot use this because we want a space in the center
-    
-
 
     &__heading {
         font-size: 2.25rem;
         font-weight: 300;
         text-transform: uppercase;
         letter-spacing: 1px; //good looking purposes haha
-        padding: 1.5rem 3rem; // ''     ''     ''     '' 
+        padding: 1.5rem 3rem; // ''     ''     ''     ''
 
-        @media only screen and (max-width: 37.5em) { // we make the font smaller and reduce the space because it has too much space;
-          font-size: 1.8rem; 
-          padding: 1.25rem 2rem;
+        @media only screen and (max-width: 37.5em) {
+            // we make the font smaller and reduce the space because it has too much space;
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;
         }
     }
 
@@ -310,23 +298,21 @@
         margin-right: auto; //instead using flex glow : 1 we use this its like a flex glow but it doesn't take all the space (content)
         display: flex; // because the star is a svg and it displays inline so we use this so it will vertically center
     }
-    
+
     &__icon-stars,
     &__icon-location {
         width: 1.75rem;
         height: 1.75rem;
         fill: var(--color-primary-dark);
-
     }
 
     &__location {
         font-size: 1.5rem;
         display: flex;
         align-items: center;
-
     }
     &__icon-location {
-        margin-right: .5rem;
+        margin-right: 0.5rem;
     }
 
     &__rating {
@@ -334,16 +320,16 @@
         margin-left: 3rem;
         color: #fff;
         align-self: stretch; // so that it takes all the space vertically and no white space to top and bottom
-        padding: 0 2.25rem; 
+        padding: 0 2.25rem;
 
-        display: flex; 
+        display: flex;
         flex-direction: column; // vertical
         align-items: center;
         justify-content: center;
 
-        @media only screen and (max-width: 37.5em) { 
+        @media only screen and (max-width: 37.5em) {
             padding: 0 1.5rem; // we make the container smaller
-          }
+        }
 
         &-average {
             font-size: 2.25rem;
@@ -352,7 +338,7 @@
 
             @media only screen and (max-width: 37.5em) {
                 font-size: 1.8rem; //we make the font smaller because it's too big for its resolution right now
-              }
+            }
         }
         &-count {
             font-size: 1.3rem;
@@ -361,11 +347,9 @@
 
             @media only screen and (max-width: 37.5em) {
                 font-size: 1rem; //we make the font smaller because it's too big for its resolution right now
-              }
+            }
         }
-
     }
-
 }
 
 ////////////////////////////////////////////////
@@ -380,11 +364,11 @@
     display: inline-block; // to make it block
     background-color: transparent; // to make it transparent haha
     cursor: pointer;
-    transition: all .2s;
+    transition: all 0.2s;
 
     & span {
         margin-left: 3px;
-        transition: margin-left .2s;
+        transition: margin-left 0.2s;
     }
 
     &:hover {
@@ -411,10 +395,9 @@
     display: inline-block; // to make it block
     background-color: transparent; // to make it transparent haha
     cursor: pointer;
-    transition: all .2s;
+    transition: all 0.2s;
     display: flex;
     margin: 1rem auto 2rem;
-    
 
     &:hover {
         color: var(--color-grey-dark-1);
@@ -425,16 +408,15 @@
     }
 }
 
-
 @keyframes pulsate {
     0% {
         transform: scale(1);
         box-shadow: none;
     }
-    
+
     50% {
         transform: scale(1.05);
-        box-shadow: 0 1rem 4rem rgba(0,0,0,.12);
+        box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.12);
     }
     100% {
         transform: scale(1);
@@ -442,31 +424,33 @@
     }
 }
 
-
 ////////////////////////////////////////////////
-// PARAGRAPH 
+// PARAGRAPH
 
 .paragraph:not(:last-of-type) {
     margin-bottom: 2rem;
-} 
-.active { //FOR JS purposes 
+}
+.active {
+    //FOR JS purposes
     display: none;
 }
-#paragraph_box { //space between the hidden and the unhidden paragraph
+#paragraph_box {
+    //space between the hidden and the unhidden paragraph
     margin-top: 2rem;
-    transition: all .2s;
+    transition: all 0.2s;
 }
 
 ////////////////////////////////////////////////
 // READ MORE
 
-.btn { //read more (three dot horizontal)
+.btn {
+    //read more (three dot horizontal)
     display: flex; // to center the button
     justify-content: center;
 
     &__rm {
         cursor: pointer;
-        transition: all .2s;
+        transition: all 0.2s;
         outline: none; // because its a button;
         border: none; // because its a button;
         background-color: transparent; // to get rid of the annoying background;
@@ -476,11 +460,11 @@
         }
     }
 
-    &__icon { // the size of the icon/button;
-        height: 2.5rem; 
+    &__icon {
+        // the size of the icon/button;
+        height: 2.5rem;
         width: 3.5rem;
         fill: var(--color-primary-dark);
-        
     }
 }
 
@@ -490,42 +474,43 @@
     margin: 0 0 0 2rem;
     border-top: var(--line); //line separator;
     border-bottom: var(--line); //line separator;
-    padding: 2rem 0;  //padding top and bot;
-    display: flex; 
+    padding: 2rem 0; //padding top and bot;
+    display: flex;
     flex-direction: column; //to center verically;
     justify-content: center;
     align-items: center;
 }
 
-.album__title { // ALBUM TEXT
+.album__title {
+    // ALBUM TEXT
     font-size: 2.5rem;
     font-weight: 300;
     text-transform: uppercase;
     margin-bottom: 2rem; //good for the eye;
-    letter-spacing: .5rem;
-    
+    letter-spacing: 0.5rem;
 }
 
-.album__list { //ul
+.album__list {
+    //ul
     list-style: none;
     display: flex;
-    flex-wrap: wrap; 
-    
+    flex-wrap: wrap;
 
-    &--item { //li
+    &--item {
+        //li
         flex: 0 0 50%; // so that it displays side by side;
-        margin-bottom: .7rem; // space betweens lines;
+        margin-bottom: 0.7rem; // space betweens lines;
         font-size: 1.5rem; //font of the lines;
-        align-items:center; // so that the psedue before element and the line will vertically center;
+        align-items: center; // so that the psedue before element and the line will vertically center;
     }
 
     &--item::before {
-        content: ""; // without this it wont display;
+        content: ''; // without this it wont display;
         display: inline-block;
         height: 1.5rem; //height of the icon;
-        width: 1.5rem;  //width of the icon;
-        margin-right: .7rem; //space between the line and the icon;
-        
+        width: 1.5rem; //width of the icon;
+        margin-right: 0.7rem; //space between the line and the icon;
+
         //Older browser
         //background-image: url(../img/chevron-thin-right.svg);
         //background-size: cover;
@@ -540,16 +525,14 @@
     }
 }
 
-
 ////////////////////////////////////////////////
-// RECOMMENDED 
+// RECOMMENDED
 .recommend {
     font-size: 1.3rem; //font-size of the recommend line;
-    color: var(--color-grey-dark-2); 
+    color: var(--color-grey-dark-2);
 
     display: flex; // so that the picture and the text will align horizontally;
     align-items: center;
-    
 
     &__photo {
         box-sizing: content-box; //we make it this way so that when we use outline the size of the picture will stay the same;
@@ -574,57 +557,60 @@
 
 ////////////////////////////////////////////////
 // REVIEWS
-.review { //review-box
+.review {
+    //review-box
     background-color: #fff; //background color of the boxes
     box-shadow: var(--shadow); //shadow of the boxes
     padding: 3rem; //padding of the boxes
-    margin-bottom: 3.5rem;  //margin between the 2 boxes
+    margin-bottom: 3.5rem; //margin between the 2 boxes
     position: relative; // because we use position absolute position of the quote icon
-    overflow: hidden;   // the tail of the quote icon is overflowing
+    overflow: hidden; // the tail of the quote icon is overflowing
 
     @media only screen and (max-width: 56.25em) {
         padding: 2rem; //we reduce the space around the text and the box
         margin-bottom: 3rem; // we reduce the space between the boxes
     }
 
-
-    &__text { // the message itself
+    &__text {
+        // the message itself
         margin-bottom: 2rem; // margin between the text and the name, pic and date
         z-index: 10; // because the quote icon is overlapping the text
-        position: relative; // we need to use position in order to make the z index work 
+        position: relative; // we need to use position in order to make the z index work
     }
 
     &__user {
         display: flex; // so that the picture and the name, date align horizontally
-        align-items: center;// and also in center
+        align-items: center; // and also in center
     }
 
     &__photo {
-        height: 5rem;   
+        height: 5rem;
         width: 5rem;
         border-radius: 50%; //circle
-        margin-right: .5rem; // space between the picture and the name, date
+        margin-right: 0.5rem; // space between the picture and the name, date
     }
 
     &__user-box {
         // the container of the name and date text;
     }
 
-    &__user-name { //name 
-        font-size: 1.4rem; 
+    &__user-name {
+        //name
+        font-size: 1.4rem;
         text-transform: uppercase;
         font-weight: 600;
-        margin-bottom: .4rem;
-
+        margin-bottom: 0.4rem;
     }
 
-    &__user-date { //date
+    &__user-date {
+        //date
         font-size: 1.1rem;
         color: var(--color-grey-dark-3);
     }
 
-    &::before { //icon quote;
-        content: "\201C";
+    &::before {
+        //icon quote;
+        content: '\201C';
         position: absolute;
         left: -1rem;
         top: -2.75rem;
@@ -639,15 +625,17 @@
 ////////////////////////////////////////////////
 // CALL TO ACTION
 
-.cta { // the text and the button container
+.cta {
+    // the text and the button container
     padding: 3.5rem 0; //space around the whole container
     text-align: center; // so the text and the button will be centered vertically because the is a block element
 
     @media only screen and (max-width: 56.25em) {
         padding: 2.5rem 0; // we make the button smaller as the resulotion became smaller
     }
-    
-    &__join-now { //the text
+
+    &__join-now {
+        //the text
         font-size: 3rem;
         font-weight: 300;
         text-transform: uppercase;
@@ -663,24 +651,27 @@
     font-weight: 300;
     border-radius: 100px;
     border: none; //get rid of annoying border
-    background-image: linear-gradient(to right, var(--color-grey-dark-1),var(--color-primary-dark) ); //background of the button
+    background-image: linear-gradient(
+        to right,
+        var(--color-grey-dark-1),
+        var(--color-primary-dark)
+    ); //background of the button
     color: white; // font color
     position: relative; //because we use position absolute for invisible splan
     overflow: hidden; // so that the invisible span will completely hidden
     cursor: pointer; //because it's a button
     font-family: inherit;
 
-    & > * { //common between the two and also its a children selector
-        display: inline-block; // so that we can use padding      
-        height: 100%;  //we need to use height and weight so that we can animate it using this
+    & > * {
+        //common between the two and also its a children selector
+        display: inline-block; // so that we can use padding
+        height: 100%; //we need to use height and weight so that we can animate it using this
         width: 100%;
-        transition: all .2s;
+        transition: all 0.2s;
     }
-
 
     &__visible {
         padding: 2rem 7.5rem; //space around the text in button
-       
     }
 
     &__invisible {
@@ -691,10 +682,16 @@
         font-size: 1.3rem;
     }
     &:hover {
-        background-image: linear-gradient(to left, var(--color-grey-dark-1),var(--color-primary-dark) ); // as you hover the button the background color changes
+        background-image: linear-gradient(
+            to left,
+            var(--color-grey-dark-1),
+            var(--color-primary-dark)
+        ); // as you hover the button the background color changes
     }
     &:hover &__visible {
-        transform: translateY(100%); // the visible span will be hidden using this; and we need to use height and weight so that it will work
+        transform: translateY(
+            100%
+        ); // the visible span will be hidden using this; and we need to use height and weight so that it will work
     }
     &:hover &__invisible {
         top: 0; // the invisible span will be visible
@@ -704,5 +701,4 @@
         outline: none; //get rid of the annoying outline when we clicked it
         animation: pulsate 1s infinite;
     }
-
 }
