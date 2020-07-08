@@ -54,9 +54,7 @@
         &::-webkit-input-placeholder {
             //FONT PLACEHOLDER
             font-weight: 100;
-            color: var(
-                --color-grey-light-4
-            ); //before when its clicked; lighter color of font;
+            color: var(--color-grey-light-4); //before when its clicked; lighter color of font;
         }
     }
 
@@ -68,18 +66,14 @@
     &__button {
         // THE ICON BUTTON
 
-        background-color: var(
-            --color-grey-light-2
-        ); //so that it will camouflage to the input
+        background-color: var(--color-grey-light-2); //so that it will camouflage to the input
         border: none;
 
         &:focus {
             outline: none;
         }
         &:active {
-            transform: translateY(
-                2px
-            ); //when the search icon clicked, it will bounce a bit
+            transform: translateY(2px); //when the search icon clicked, it will bounce a bit
         }
     }
 
@@ -427,17 +421,13 @@
 ////////////////////////////////////////////////
 // PARAGRAPH
 
+.paragraph-hide:not(:last-of-type),
 .paragraph:not(:last-of-type) {
     margin-bottom: 2rem;
 }
-.active {
+.hide {
     //FOR JS purposes
     display: none;
-}
-#paragraph_box {
-    //space between the hidden and the unhidden paragraph
-    margin-top: 2rem;
-    transition: all 0.2s;
 }
 
 ////////////////////////////////////////////////
@@ -651,11 +641,7 @@
     font-weight: 300;
     border-radius: 100px;
     border: none; //get rid of annoying border
-    background-image: linear-gradient(
-        to right,
-        var(--color-grey-dark-1),
-        var(--color-primary-dark)
-    ); //background of the button
+    background-image: linear-gradient(to right, var(--color-grey-dark-1), var(--color-primary-dark)); //background of the button
     color: white; // font color
     position: relative; //because we use position absolute for invisible splan
     overflow: hidden; // so that the invisible span will completely hidden
